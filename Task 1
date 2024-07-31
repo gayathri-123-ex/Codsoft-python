@@ -1,0 +1,41 @@
+
+# To-Do List Program
+
+# Initialize an empty list to store tasks
+tasks = []
+
+# Function to display tasks
+def display_tasks():
+	print("To-Do List:")
+	for i, task in enumerate(tasks, start=1):
+		print(f"{i}. {task}")
+
+# Function to add a task
+def add_task():
+	task = input("Enter a task: ")
+	tasks.append(task)
+
+# Function to delete a task
+def delete_task():
+	display_tasks()
+	task_number = int(input("Enter the task number to delete: "))
+	tasks.pop(task_number - 1)
+
+# Main program loop
+while True:
+	print("\n1. Display Tasks")
+	print("2. Add Task")
+	print("3. Delete Task")
+	print("4. Quit")
+	choice = input("Choose an option: ")
+
+	if choice == "1":
+		display_tasks()
+	elif choice == "2":
+		add_task()
+	elif choice == "3":
+		delete_task()
+	elif choice == "4":
+		break
+	else:
+		print("Invalid option. Please try again.")
