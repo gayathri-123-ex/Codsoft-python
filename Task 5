@@ -1,0 +1,53 @@
+
+# Contact Book Program
+
+# Initialize an empty dictionary to store contacts
+contacts = {}
+
+# Function to display contacts
+def display_contacts():
+	print("Contact Book:")
+	for name, phone in contacts.items():
+		print(f"{name}: {phone}")
+
+# Function to add a contact
+def add_contact():
+	name = input("Enter name: ")
+	phone = input("Enter phone number: ")
+	contacts[name] = phone
+
+# Function to delete a contact
+def delete_contact():
+	display_contacts()
+	name = input("Enter name to delete: ")
+	del contacts[name]
+
+# Function to search for a contact
+def search_contact():
+	name = input("Enter name to search: ")
+	if name in contacts:
+		print(f"Phone: {contacts[name]}")
+	else:
+		print("Contact not found!")
+
+# Main program loop
+while True:
+	print("\n1. Display Contacts")
+	print("2. Add Contact")
+	print("3. Delete Contact")
+	print("4. Search Contact")
+	print("5. Quit")
+	choice = input("Choose an option: ")
+
+	if choice == "1":
+		display_contacts()
+	elif choice == "2":
+		add_contact()
+	elif choice == "3":
+		delete_contact()
+	elif choice == "4":
+		search_contact()
+	elif choice == "5":
+		break
+	else:
+		print("Invalid option. Please try again.")
